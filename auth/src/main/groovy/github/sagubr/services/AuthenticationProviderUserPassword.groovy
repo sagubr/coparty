@@ -36,7 +36,7 @@ class AuthenticationProviderUserPassword implements AuthenticationProvider {
         //passwordEncoder.encodePassword(user.password)
 
         authRequest.identity == user.getUsername() && authRequest.secret == user.getPassword()
-                ? AuthenticationResponse.success("Bem vindo ${user.getUsername()}")
+                ? AuthenticationResponse.success("${user.getUsername()}")
                 : AuthenticationResponse.failure(AuthenticationFailureReason.CREDENTIALS_DO_NOT_MATCH)
     }
 

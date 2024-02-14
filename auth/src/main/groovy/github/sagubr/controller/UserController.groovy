@@ -5,6 +5,8 @@ import github.sagubr.services.UserService
 import io.micronaut.http.HttpStatus
 import io.micronaut.http.MediaType
 import io.micronaut.http.annotation.*
+import io.micronaut.security.annotation.Secured
+import io.micronaut.security.rules.SecurityRule
 import io.micronaut.serde.annotation.SerdeImport
 import jakarta.inject.Inject
 import org.slf4j.Logger
@@ -12,6 +14,7 @@ import org.slf4j.LoggerFactory
 
 @Controller("/users")
 @SerdeImport(User.class)
+@Secured(SecurityRule.IS_AUTHENTICATED)
 class UserController {
 
     @Inject
