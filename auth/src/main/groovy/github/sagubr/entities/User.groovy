@@ -1,10 +1,10 @@
 package github.sagubr.entities
 
+import github.sagubr.services.PasswordEncoder
 import io.micronaut.serde.annotation.Serdeable
 import jakarta.persistence.*
 import org.hibernate.annotations.CreationTimestamp
 
-import java.nio.charset.StandardCharsets
 import java.time.LocalDateTime
 
 @Entity
@@ -22,11 +22,5 @@ class User {
     LocalDateTime timestamp
     @Enumerated(EnumType.ORDINAL)
     Status status
-
-    @PrePersist
-    void encodePassword() {
-        this.password = Base64.encoder
-                .encodeToString(this.password.getBytes(StandardCharsets.UTF_8))
-    }
 
 }

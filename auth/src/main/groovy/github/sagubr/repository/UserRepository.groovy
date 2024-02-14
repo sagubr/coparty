@@ -7,4 +7,5 @@ import io.micronaut.data.repository.CrudRepository
 @Repository
 interface UserRepository extends CrudRepository<User, Long> {
 
+    abstract User findByUsername(String username)
 }
