@@ -1,4 +1,4 @@
-package github.sagubr.entities
+package github.sagubr.entity
 
 enum Status {
     ACTIVED(0),

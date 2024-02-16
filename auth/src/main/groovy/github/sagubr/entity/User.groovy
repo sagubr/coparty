@@ -1,6 +1,6 @@
-package github.sagubr.entities
+package github.sagubr.entity
 
-import github.sagubr.services.PasswordEncoder
+
 import io.micronaut.serde.annotation.Serdeable
 import jakarta.persistence.*
 import org.hibernate.annotations.CreationTimestamp
@@ -9,7 +9,7 @@ import java.time.LocalDateTime
 
 @Entity
 @Table(name = "users")
-@Serdeable.Deserializable
+@Serdeable
 class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

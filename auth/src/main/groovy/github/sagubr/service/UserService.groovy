@@ -1,6 +1,7 @@
-package github.sagubr.services
+package github.sagubr.service
 
-import github.sagubr.entities.User
+import github.sagubr.entity.User
+import github.sagubr.message.Producer
 import github.sagubr.repository.UserRepository
 import io.micronaut.core.annotation.NonNull
 import jakarta.inject.Inject

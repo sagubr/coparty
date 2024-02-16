@@ -1,6 +1,6 @@
 package github.sagubr.repository
 
-import github.sagubr.entities.User
+import github.sagubr.entity.User
 import io.micronaut.data.annotation.Repository
 import io.micronaut.data.repository.CrudRepository
 

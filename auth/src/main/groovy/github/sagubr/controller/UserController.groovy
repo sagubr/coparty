@@ -1,26 +1,25 @@
 package github.sagubr.controller
 
-import github.sagubr.entities.User
-import github.sagubr.services.UserService
-import io.micronaut.http.HttpStatus
-import io.micronaut.http.MediaType
+import github.sagubr.entity.User
+import github.sagubr.message.Producer
+import github.sagubr.service.UserService
+import io.micronaut.http.*
 import io.micronaut.http.annotation.*
 import io.micronaut.security.annotation.Secured
 import io.micronaut.security.rules.SecurityRule
-import io.micronaut.serde.annotation.SerdeImport
+import io.micronaut.serde.annotation.Serdeable
 import jakarta.inject.Inject
-import org.slf4j.Logger
-import org.slf4j.LoggerFactory
 
 @Controller("/users")
-@SerdeImport(User.class)
+@Serdeable
 @Secured(SecurityRule.IS_AUTHENTICATED)
 class UserController {
 
     @Inject
     UserService userService
 
-    private final Logger LOG = LoggerFactory.getLogger(User.class)
+    @Inject
+    Producer producer
 
     @Get
     @Produces(MediaType.APPLICATION_JSON)
@@ -32,6 +31,7 @@ class UserController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Status(HttpStatus.CREATED)
     User save(@Body User user) {
+        producer.send(user.username)
         userService.save(user)
     }
 

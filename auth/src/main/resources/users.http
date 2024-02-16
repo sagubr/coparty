@@ -1,5 +1,5 @@
 ### Security
-POST http://localhost:8080/login
+POST http://localhost:8081/login
 Content-Type: application/json
 
 {
@@ -10,25 +10,18 @@ Content-Type: application/json
 > {% client.global.set("auth_token", response.body.access_token); %}
 
 ###
-POST http://localhost:8080/users/
+POST http://localhost:8081/users/
 Authorization: Bearer {{auth_token}}
 Content-Type: application/json
 
 {
-  "username": "gustavo garcia",
+  "username": "becca pires",
   "password": "123",
   "roles": [],
   "status": "SUSPEND"
 }
 
 ###
-GET http://localhost:8080/users/
+GET http://localhost:8081/users/
 Authorization: Bearer {{auth_token}}
 Content-Type: application/json
-
-{
-  "username": "gustavo garcia",
-  "password": "123",
-  "roles": [],
-  "status": "SUSPEND"
-}
