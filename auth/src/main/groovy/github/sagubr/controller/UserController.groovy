@@ -31,7 +31,7 @@ class UserController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Status(HttpStatus.CREATED)
     User save(@Body User user) {
-        producer.send(user.username)
+        producer.send(user)
         userService.save(user)
     }
 

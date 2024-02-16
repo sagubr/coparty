@@ -7,7 +7,7 @@ import io.swagger.v3.oas.annotations.info.*
 
 @OpenAPIDefinition(
         info = @Info(
-                title = "auth",
+                title = "Microservice",
                 version = "0.0"
         )
 )

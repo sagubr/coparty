@@ -29,6 +29,7 @@ dependencies {
     compileOnly("io.micronaut.serde:micronaut-serde-processor")
     runtimeOnly("io.goodforgod:slf4j-simple-logger:2.0.0")
     runtimeOnly("org.postgresql:postgresql")
+    runtimeOnly("org.yaml:snakeyaml")
     testImplementation("io.micronaut:micronaut-http-client")
     aotPlugins platform("io.micronaut.platform:micronaut-platform:4.3.1")
     aotPlugins("io.micronaut.security:micronaut-security-aot")

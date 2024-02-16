@@ -1,4 +1,4 @@
-package github.sagubr.service
+package github.sagubr.util
 
 import java.nio.charset.StandardCharsets
 

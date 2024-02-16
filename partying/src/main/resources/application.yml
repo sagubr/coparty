@@ -1,8 +1,8 @@
 micronaut:
     application:
-        name: auth
+        name: partying
     server:
-        port: 8081
+        port: 8082
     security:
         authentication: bearer
         token:
@@ -11,9 +11,7 @@ micronaut:
                     secret:
                         generator:
                             secret: "${JWT_GENERATOR_SIGNATURE_SECRET:pleaseChangeThisSecretForANewOne}"
-        endpoints:
-            login:
-                enabled: true
+        enabled: false
     router:
         static-resources:
             swagger:
@@ -22,22 +20,6 @@ micronaut:
                 mapping: "/swagger-ui/**"
                 paths: "classpath:META-INF/swagger/views/swagger-ui"
                 mapping: "/swagger/**"
-jpa:
-    default:
-        entity-scan:
-            packages: github.sagubr
-        properties:
-            hibernate:
-                hbm2ddl:
-                    auto: update
-                show_sql: true
-datasources:
-    default:
-        url: jdbc:postgresql://localhost:5432/coparty_auth
-        driverClassName: org.postgresql.Driver
-        username: postgres
-        password: postgres
-
 kafka:
     bootstrap:
         servers: localhost:9091
